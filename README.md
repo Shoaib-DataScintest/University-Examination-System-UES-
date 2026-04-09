@@ -68,7 +68,13 @@ This project is a web-based University Examination System developed using HTML, 
 * Improve accuracy and speed
 * Provide better user experience
 
----
+##  ScreenShots
+<img width="1905" height="878" alt="image" src="https://github.com/user-attachments/assets/d0b5fcb4-2047-466b-baca-a9a5a1abd57a" /><img width="1899" height="878" alt="image" src="https://github.com/user-attachments/assets/28f4e93a-fe7f-4f43-94b2-9dace6e2de6e" /><img width="1887" height="875" alt="image" src="https://github.com/user-attachments/assets/e632ed3b-2f90-4bd4-81a6-d428c1020887" /><img width="1908" height="864" alt="image" src="https://github.com/user-attachments/assets/cb9ae774-398d-4fa9-85f6-a91e68a87a40" /><img width="1908" height="887" alt="image" src="https://github.com/user-attachments/assets/dfb11308-a8a0-4863-ae1c-aab78c366a22" />
+
+
+
+
+
 
 ## 👤 Author
 
