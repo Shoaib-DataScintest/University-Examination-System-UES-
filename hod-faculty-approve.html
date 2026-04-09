@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HOD – Approve Faculty</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+<script>
+    if (localStorage.getItem("userRole") !== "hod") {
+        alert("Access denied");
+        location.href = "index.html";
+    }
+</script>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <h2>HOD</h2>
+        <a href="hod-dashboard.html">Dashboard</a>
+        <a class="active" href="#">Approve Faculty</a>
+        <a href="index.html">Logout</a>
+    </aside>
+
+    <main class="content">
+
+        <div class="header-card">
+            <h1>Approve Faculty</h1>
+            <p>Approve or reject faculty registration.</p>
+        </div>
+
+        <div class="card">
+            <p><b>Dr. Ahmed</b> – Computer Science</p>
+            <div class="action-buttons">
+                <a class="add">Approve</a>
+                <a class="delete">Reject</a>
+            </div>
+        </div>
+
+    </main>
+</div>
+
+</body>
+</html>

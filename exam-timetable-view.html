@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>View Exam Timetable</title>
+<link rel="stylesheet" href="css/dashboard.css">
+
+<script>
+const role = localStorage.getItem("userRole");
+if (!["admin", "hod"].includes(role)) {
+    alert("Unauthorized access!");
+    window.location.href = "index.html";
+}
+</script>
+</head>
+
+<body>
+<div class="layout">
+
+<aside class="sidebar">
+    <h2>Exam Timetable</h2>
+    <a href="exam-timetable.html">Back</a>
+    <a href="index.html">Logout</a>
+</aside>
+
+<main class="main">
+
+<div class="header">
+    <h1>Exam Timetable</h1>
+    <p>View scheduled examinations</p>
+</div>
+
+<div class="card">
+
+<table class="modern-table">
+<thead>
+<tr>
+    <th>Course</th>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Room</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>CS101</td>
+    <td>2026-02-15</td>
+    <td>09:00</td>
+    <td>Room A1</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</main>
+</div>
+</body>
+</html>

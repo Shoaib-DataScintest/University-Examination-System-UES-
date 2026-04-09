@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Academic Transcript</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/dashboard.css">
+
+<style>
+.transcript-box {
+    border: 2px solid #1e3c72;
+    padding: 25px;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.transcript-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.transcript-title h2 {
+    color: #1e3c72;
+}
+
+.student-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 160px;
+    gap: 15px;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.photo-box {
+    border: 1px solid #aaa;
+    height: 180px;
+    width: 140px;
+}
+
+.photo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.semester-title {
+    font-size: 20px;
+    margin: 25px 0 10px;
+    color: #1e3c72;
+    font-weight: bold;
+}
+
+.transcript-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.transcript-table th,
+.transcript-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+.sem-gpa {
+    text-align: right;
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+.cgpa-box {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 25px;
+    color: #1e3c72;
+}
+
+.bottom-confirm {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 35px;
+}
+
+#qrcode {
+    border: 1px solid #000;
+    padding: 8px;
+}
+
+.signature {
+    text-align: center;
+}
+
+.signature-line {
+    width: 220px;
+    border-top: 1px solid #000;
+    margin-top: 40px;
+}
+
+.print-btn {
+    text-align: center;
+    margin-top: 25px;
+}
+
+@media print {
+    .sidebar, .print-btn {
+        display: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="layout">
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+    <h2>Student</h2>
+    <a href="student-dashboard.html">Dashboard</a>
+    <a href="result.html">Result</a>
+    <a href="admit-card.html">Admit Card</a>
+    <a class="active" href="transcript.html">Transcript</a>
+    <a href="rechecking-request.html">Rechecking</a>
+    <a href="student-rechecking-history.html">Rechecking History</a>
+    <a href="index.html">Logout</a>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+<div class="header">
+    <h1>Academic Transcript</h1>
+    <p>Official academic record</p>
+</div>
+
+<div class="card">
+<div class="transcript-box">
+
+<!-- HEADER -->
+<div class="transcript-title">
+    <h2>University Examination System</h2>
+    <p>Official Academic Transcript</p>
+</div>
+
+<!-- STUDENT INFO -->
+<div class="student-info">
+    <div>
+        <p><strong>Name:</strong> Ali Khan</p>
+        <p><strong>Registration No:</strong> 2021-CS-101</p>
+        <p><strong>Program:</strong> BS Computer Science</p>
+    </div>
+    <div>
+        <p><strong>Department:</strong> Computer Science</p>
+        <p><strong>Session:</strong> 2021–2025</p>
+        <p><strong>Status:</strong> Regular</p>
+    </div>
+    <div class="photo-box">
+        <img src="images/student.jpg" alt="Student Photo">
+    </div>
+</div>
+
+<!-- SEMESTER 1 -->
+<div class="semester" data-semester>
+<div class="semester-title">Semester 1</div>
+<table class="transcript-table">
+<tr>
+<th>Code</th><th>Subject</th><th>Cr.Hrs</th><th>Marks</th><th>Grade</th><th>GP</th>
+</tr>
+<tr><td>CS-101</td><td>Programming Fundamentals</td><td class="cr">3</td><td class="marks">82</td><td class="grade"></td><td class="gp"></td></tr>
+<tr><td>CS-102</td><td>Discrete Mathematics</td><td class="cr">3</td><td class="marks">75</td><td class="grade"></td><td class="gp"></td></tr>
+<tr><td>CS-103</td><td>ICT</td><td class="cr">2</td><td class="marks">68</td><td class="grade"></td><td class="gp"></td></tr>
+<tr><td>ENG-101</td><td>English</td><td class="cr">2</td><td class="marks">70</td><td class="grade"></td><td class="gp"></td></tr>
+<tr><td>MTH-101</td><td>Calculus</td><td class="cr">3</td><td class="marks">65</td><td class="grade"></td><td class="gp"></td></tr>
+</table>
+<div class="sem-gpa">Semester GPA: <span class="semesterGPA"></span></div>
+</div>
+
+<!-- SEMESTER 2 -->
+<div class="semester" data-semester>
+<div class="semester-title">Semester 2</div>
+<table class="transcript-table">
+<tr>
+<th>Code</th><th>Subject</th><th>Cr.Hrs</th><th>Marks</th><th>Grade</th><th>GP</th>
+</tr>
+<tr><td>CS-201</td><td>Object Oriented Programming</td><td class="cr">3</td><td class="marks">78</td><td class="grade"></td><td class="gp"></td></tr>
+<tr><td>CS-202</td><td>Data Structures</td><td class="cr">3</td><td class="marks">72</td><td class="grade"></td><td class="gp"></td></tr>
+<tr><td>CS-203</td><td>Digital Logic Design</td><td class="cr">3</td><td class="marks">80</td><td class="grade"></td><td class="gp"></td></tr>
+<tr><td>MTH-201</td><td>Linear Algebra</td><td class="cr">3</td><td class="marks">69</td><td class="grade"></td><td class="gp"></td></tr>
+<tr><td>ENG-201</td><td>Communication Skills</td><td class="cr">2</td><td class="marks">74</td><td class="grade"></td><td class="gp"></td></tr>
+</table>
+<div class="sem-gpa">Semester GPA: <span class="semesterGPA"></span></div>
+</div>
+
+<!-- CGPA -->
+<div class="cgpa-box">
+CGPA: <span id="cgpa"></span>
+</div>
+
+<!-- QR + SIGNATURE -->
+<div class="bottom-confirm">
+    <div id="qrcode"></div>
+
+    <div class="signature">
+        <div class="signature-line"></div>
+        <p><strong>Controller of Examinations</strong></p>
+    </div>
+</div>
+
+<div class="print-btn">
+<button onclick="window.print()">Print / Save PDF</button>
+</div>
+
+</div>
+</div>
+
+</main>
+</div>
+
+<!-- GPA & CGPA LOGIC -->
+<script>
+function gradePoint(m) {
+    if (m >= 85) return [4.0, "A"];
+    if (m >= 75) return [3.5, "B+"];
+    if (m >= 65) return [3.0, "B"];
+    if (m >= 55) return [2.5, "C"];
+    if (m >= 50) return [2.0, "D"];
+    return [0.0, "F"];
+}
+
+let totalQuality = 0;
+let totalCredits = 0;
+
+document.querySelectorAll("[data-semester]").forEach(sem => {
+    let semQP = 0;
+    let semCR = 0;
+
+    sem.querySelectorAll("tr").forEach(row => {
+        let marksCell = row.querySelector(".marks");
+        if (marksCell) {
+            let marks = parseInt(marksCell.innerText);
+            let cr = parseInt(row.querySelector(".cr").innerText);
+            let [gp, grade] = gradePoint(marks);
+
+            row.querySelector(".grade").innerText = grade;
+            row.querySelector(".gp").innerText = gp.toFixed(2);
+
+            semQP += gp * cr;
+            semCR += cr;
+
+            totalQuality += gp * cr;
+            totalCredits += cr;
+        }
+    });
+
+    sem.querySelector(".semesterGPA").innerText = (semQP / semCR).toFixed(2);
+});
+
+document.getElementById("cgpa").innerText =
+    (totalQuality / totalCredits).toFixed(2);
+</script>
+
+<!-- QR CODE -->
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<script>
+new QRCode(document.getElementById("qrcode"), {
+    text: "University Examination System\nTranscript Verification\nReg No: 2021-CS-101",
+    width: 120,
+    height: 120,
+    correctLevel: QRCode.CorrectLevel.H
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+}
+
+.login-container {
+    width: 360px;
+    margin: 120px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.login-container input,
+.login-container select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    background: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.footer {
+    margin-top: 15px;
+    font-size: 13px;
+    color: gray;
+}
+
+.dashboard {
+    display: flex;
+}
+
+.sidebar {
+    width: 230px;
+    background: #003366;
+    height: 100vh;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    color: white;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 15px 0;
+}
+
+.content {
+    padding: 30px;
+    flex: 1;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+.badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.pending { background: #fff3cd; color: #856404; }
+.approved { background: #d4edda; color: #155724; }
+.rejected { background: #f8d7da; color: #721c24; }
+
+.approve {
+    background: #198754;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+}
+
+.reject {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+}

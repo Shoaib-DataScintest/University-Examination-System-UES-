@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Exam Duty</title>
+<link rel="stylesheet" href="css/dashboard.css">
+
+<script>
+const role = localStorage.getItem("userRole");
+if (role !== "invigilator") {
+    alert("Unauthorized access!");
+    window.location.href = "index.html";
+}
+</script>
+</head>
+
+<body>
+<div class="layout">
+
+<aside class="sidebar">
+    <h2>Invigilator</h2>
+    <a href="invigilator-dashboard.html">Dashboard</a>
+    <a class="active" href="invigilator-exam-duty.html">Exam Duty</a>
+    <a href="invigilator-attendance.html">Attendance</a>
+    <a href="index.html">Logout</a>
+</aside>
+
+<main class="main">
+
+<div class="header">
+    <h1>Assigned Exam Duties</h1>
+    <p>Read-only examination assignments.</p>
+</div>
+
+<div class="card">
+
+<table class="modern-table">
+<thead>
+<tr>
+    <th>Course</th>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Room</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+    <td>CS101</td>
+    <td>2026-02-15</td>
+    <td>09:00 – 12:00</td>
+    <td>Room A1</td>
+</tr>
+<tr>
+    <td>CS203</td>
+    <td>2026-02-17</td>
+    <td>10:00 – 01:00</td>
+    <td>Room B2</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+</main>
+</div>
+</body>
+</html>

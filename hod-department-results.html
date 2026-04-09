@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Department Results</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+<script>
+    const role = localStorage.getItem("userRole");
+    if (role !== "hod") {
+        alert("Access denied!");
+        window.location.href = "index.html";
+    }
+</script>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <h2>HOD</h2>
+        <a href="hod-dashboard.html">Dashboard</a>
+        <a href="hod-students-view.html">Students</a>
+        <a href="hod-exam-timetable.html">Exam Timetable</a>
+        <a href="hod-department-results.html" class="active">Department Results</a>
+        <a href="index.html">Logout</a>
+    </aside>
+
+    <main class="content">
+
+        <div class="page-header">
+            <h1>Department Results</h1>
+            <p>Overview of department academic performance.</p>
+        </div>
+
+        <div class="card">
+            <table class="modern-table">
+                <thead>
+                    <tr>
+                        <th>Program</th>
+                        <th>Semester</th>
+                        <th>Average GPA</th>
+                        <th>Pass Rate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>BSCS</td>
+                        <td>5</td>
+                        <td>3.42</td>
+                        <td>92%</td>
+                    </tr>
+                    <tr>
+                        <td>BSCS</td>
+                        <td>6</td>
+                        <td>3.31</td>
+                        <td>89%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>

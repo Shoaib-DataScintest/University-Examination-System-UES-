@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rechecking History</title>
+<link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+<script>
+/* ROLE PROTECTION — STUDENT ONLY */
+const role = localStorage.getItem("userRole");
+if (role !== "student") {
+    alert("Access Denied!");
+    window.location.href = "index.html";
+}
+
+/* DEMO STUDENT IDENTIFICATION */
+const currentStudent = "Ali Khan";   // Later comes from login
+</script>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <h2>Student</h2>
+        <a href="student-dashboard.html">Dashboard</a>
+        <a href="student-rechecking-history.html" class="active">Rechecking History</a>
+        <a href="index.html">Logout</a>
+    </aside>
+
+    <main class="main">
+        <div class="header">
+            <h1>Rechecking History</h1>
+            <p>Your rechecking request status</p>
+        </div>
+
+        <div class="card">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Request ID</th>
+                        <th>Course</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="historyTable"></tbody>
+            </table>
+        </div>
+    </main>
+
+</div>
+
+<script>
+const requests = JSON.parse(localStorage.getItem("recheckingRequests")) || [];
+const tbody = document.getElementById("historyTable");
+
+requests.forEach(req => {
+    if (req.student === currentStudent) {
+        tbody.innerHTML += `
+            <tr>
+                <td>${req.id}</td>
+                <td>${req.course}</td>
+                <td>${req.status}</td>
+            </tr>
+        `;
+    }
+});
+</script>
+
+</body>
+</html>

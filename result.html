@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Student Result</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+<div class="layout">
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+    <h2>Student</h2>
+    <a href="student-dashboard.html">Dashboard</a>
+    <a class="active" href="result.html">Result</a>
+    <a href="admit-card.html">Admit Card</a>
+    <a href="transcript.html">Transcript</a>
+    <a href="rechecking.html">Rechecking</a>
+    <a href="student-rechecking-history.html">Rechecking History</a>
+    <a href="index.html">Logout</a>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+<div class="header">
+    <h1>Semester Result</h1>
+    <p>Your marks and automatically calculated GPA</p>
+</div>
+
+<div class="card">
+<table id="resultTable">
+    <tr>
+        <th>Course</th>
+        <th>Marks</th>
+        <th>Grade</th>
+        <th>GPA</th>
+    </tr>
+    <tr>
+        <td>Database Systems</td>
+        <td class="marks">85</td>
+        <td class="grade"></td>
+        <td class="gpa"></td>
+    </tr>
+    <tr>
+        <td>OOP</td>
+        <td class="marks">78</td>
+        <td class="grade"></td>
+        <td class="gpa"></td>
+    </tr>
+    <tr>
+        <td>Data Structures</td>
+        <td class="marks">72</td>
+        <td class="grade"></td>
+        <td class="gpa"></td>
+    </tr>
+</table>
+
+<h3 style="margin-top:20px;">
+    Semester GPA: <span id="semesterGPA">0.00</span>
+</h3>
+</div>
+
+</main>
+</div>
+
+<script>
+function getGradeAndGPA(marks) {
+    if (marks >= 85) return ["A", 4.0];
+    if (marks >= 75) return ["B+", 3.5];
+    if (marks >= 65) return ["B", 3.0];
+    if (marks >= 55) return ["C", 2.5];
+    if (marks >= 50) return ["D", 2.0];
+    return ["F", 0.0];
+}
+
+let marksCells = document.querySelectorAll(".marks");
+let totalGPA = 0;
+
+marksCells.forEach(row => {
+    let marks = parseInt(row.innerText);
+    let [grade, gpa] = getGradeAndGPA(marks);
+
+    row.parentElement.querySelector(".grade").innerText = grade;
+    row.parentElement.querySelector(".gpa").innerText = gpa.toFixed(2);
+
+    totalGPA += gpa;
+});
+
+let semesterGPA = totalGPA / marksCells.length;
+document.getElementById("semesterGPA").innerText = semesterGPA.toFixed(2);
+</script>
+
+</body>
+</html>

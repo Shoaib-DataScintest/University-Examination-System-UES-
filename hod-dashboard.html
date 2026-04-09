@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HOD Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+<script>
+    if (localStorage.getItem("userRole") !== "hod") {
+        alert("Unauthorized access");
+        location.href = "index.html";
+    }
+</script>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <h2>HOD</h2>
+        <a href="hod-dashboard.html" class="active">Dashboard</a>
+        <a href="hod-faculty-view.html">Faculty</a>
+        <a href="hod-students-view.html">Students</a>
+        <a href="exam-timetable-view.html">Exam Timetable</a>
+        <a href="department-results.html">Department Results</a>
+        <a href="index.html">Logout</a>
+    </aside>
+
+    <main class="content">
+
+        <div class="header-card">
+            <h1>HOD Dashboard</h1>
+            <p>Supervise department academic activities.</p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Faculty Oversight</h3>
+                <p>Review and approve faculty members.</p>
+                <div class="action-buttons">
+                    <a href="hod-faculty-view.html" class="view">View Faculty</a>
+                    <a href="hod-faculty-approve.html" class="update">Approve Faculty</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Student Overview</h3>
+                <p>View enrolled students.</p>
+                <div class="action-buttons">
+                    <a href="hod-students-view.html" class="view">View Students</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Exam Timetable</h3>
+                <p>Monitor exam schedules.</p>
+                <div class="action-buttons">
+                    <a href="exam-timetable-view.html" class="view">View Timetable</a>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Update Exam Term</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+<div class="layout">
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+    <h2>UES Admin</h2>
+    <a href="admin-dashboard.html">Dashboard</a>
+    <a href="create-term.html">Create Exam Term</a>
+    <a href="view-terms.html">View Terms</a>
+    <a class="active" href="update-term.html">Update Term</a>
+    <a href="index.html">Logout</a>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+<div class="header">
+    <h1>Update Exam Term</h1>
+    <p>Edit existing examination term details</p>
+</div>
+
+<div class="card">
+<form class="form">
+
+    <label>Term Name</label>
+    <input type="text" value="Final Term" required>
+
+    <label>Session</label>
+    <input type="text" value="Fall 2025" required>
+
+    <label>Semester</label>
+    <input type="number" value="5" required>
+
+    <label>Exam Type</label>
+    <select>
+        <option>Mid</option>
+        <option selected>Final</option>
+        <option>Supplementary</option>
+    </select>
+
+    <label>Start Date</label>
+    <input type="date" value="2025-12-01" required>
+
+    <label>End Date</label>
+    <input type="date" value="2025-12-20" required>
+
+    <label>Status</label>
+    <select>
+        <option selected>Active</option>
+        <option>Inactive</option>
+    </select>
+
+    <button type="submit">Update Term</button>
+
+</form>
+</div>
+
+</main>
+</div>
+</body>
+</html>

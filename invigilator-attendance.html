@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Exam Attendance</title>
+<link rel="stylesheet" href="css/dashboard.css">
+
+<script>
+const role = localStorage.getItem("userRole");
+if (role !== "invigilator") {
+    alert("Unauthorized access!");
+    window.location.href = "index.html";
+}
+</script>
+</head>
+
+<body>
+<div class="layout">
+
+<aside class="sidebar">
+    <h2>Invigilator</h2>
+    <a href="invigilator-dashboard.html">Dashboard</a>
+    <a href="invigilator-exam-duty.html">Exam Duty</a>
+    <a class="active" href="invigilator-attendance.html">Attendance</a>
+    <a href="index.html">Logout</a>
+</aside>
+
+<main class="main">
+
+<div class="header">
+    <h1>Exam Attendance</h1>
+    <p>Mark student attendance for exams.</p>
+</div>
+
+<div class="card form-card">
+
+<form>
+
+<div class="form-grid">
+
+    <div class="form-group">
+        <label>Course Code</label>
+        <input type="text" placeholder="CS101" required>
+    </div>
+
+    <div class="form-group">
+        <label>Student Roll No</label>
+        <input type="text" placeholder="F2025393023" required>
+    </div>
+
+    <div class="form-group">
+        <label>Attendance Status</label>
+        <select required>
+            <option value="">Select</option>
+            <option>Present</option>
+            <option>Absent</option>
+        </select>
+    </div>
+
+</div>
+
+<button type="submit" class="btn success">Save Attendance</button>
+
+</form>
+
+</div>
+
+</main>
+</div>
+</body>
+</html>

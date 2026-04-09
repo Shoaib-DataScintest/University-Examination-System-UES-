@@ -1,0 +1,69 @@
+<body>
+
+<div class="login-container">
+    <h1>University Examination System</h1>
+    <p>Secure Role-Based Login</p>
+
+    <!-- REAL LOGIN FORM -->
+    <form action="backend/auth/login.php" method="POST">
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" name="email" id="username" required>
+        </div>
+
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" name="password" id="password" required>
+        </div>
+
+        <div class="options">
+            <label>
+                <input type="checkbox" onclick="togglePassword()"> Show Password
+            </label>
+            <label>
+                <input type="checkbox" id="rememberMe"> Remember Me
+            </label>
+        </div>
+
+        <!-- Role selection REMOVED (backend controls role) -->
+
+        <div class="options">
+            <label>
+                <input type="checkbox" onclick="toggleDarkMode()"> Dark Mode
+            </label>
+        </div>
+
+        <button type="submit" class="btn-login">Login</button>
+
+    </form>
+</div>
+
+<script>
+/* ===== PASSWORD ===== */
+function togglePassword() {
+    const pwd = document.getElementById("password");
+    pwd.type = pwd.type === "password" ? "text" : "password";
+}
+
+/* ===== DARK MODE ===== */
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+    localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
+}
+
+/* ===== LOAD SAVED SETTINGS ===== */
+window.onload = function () {
+    if (localStorage.getItem("darkMode") === "true") {
+        document.body.classList.add("dark-mode");
+    }
+
+    if (localStorage.getItem("rememberUser") === "true") {
+        document.getElementById("username").value =
+            localStorage.getItem("savedUsername") || "";
+        document.getElementById("rememberMe").checked = true;
+    }
+};
+</script>
+
+</body>

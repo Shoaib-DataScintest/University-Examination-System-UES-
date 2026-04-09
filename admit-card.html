@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Admit Card</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/dashboard.css">
+
+<style>
+.admit-card {
+    max-width: 850px;
+    margin: auto;
+    border: 3px solid #1e3c72;
+    padding: 30px;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.admit-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.admit-header h2 {
+    color: #1e3c72;
+    margin-bottom: 5px;
+}
+
+.admit-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 160px;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.photo-box {
+    border: 1px solid #999;
+    height: 180px;
+    width: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.photo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.exam-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.exam-table th,
+.exam-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.instructions {
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.instructions ul {
+    padding-left: 20px;
+}
+
+.bottom-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.signature {
+    text-align: center;
+}
+
+.signature-line {
+    width: 220px;
+    border-top: 1px solid #000;
+    margin-top: 40px;
+}
+
+.print-btn {
+    text-align: center;
+    margin-top: 25px;
+}
+
+@media print {
+    .sidebar,
+    .print-btn {
+        display: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="layout">
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+    <h2>Student</h2>
+    <a href="student-dashboard.html">Dashboard</a>
+    <a href="result.html">Result</a>
+    <a class="active" href="admit-card.html">Admit Card</a>
+    <a href="transcript.html">Transcript</a>
+    <a href="rechecking-request.html">Rechecking</a>
+    <a href="student-rechecking-history.html">Rechecking History</a>
+    <a href="index.html">Logout</a>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+<div class="header">
+    <h1>Examination Admit Card</h1>
+    <p>University Examination System</p>
+</div>
+
+<div class="card">
+<div class="admit-card">
+
+    <div class="admit-header">
+        <h2>University Examination System</h2>
+        <p>Semester Final Examination</p>
+    </div>
+
+    <div class="admit-info">
+        <div>
+            <p><strong>Name:</strong> Ali Khan</p>
+            <p><strong>Registration No:</strong> 2021-CS-101</p>
+            <p><strong>Program:</strong> BS Computer Science</p>
+        </div>
+
+        <div>
+            <p><strong>Semester:</strong> 5</p>
+            <p><strong>Department:</strong> Computer Science</p>
+            <p><strong>Session:</strong> Fall 2025</p>
+        </div>
+
+        <!-- REAL STUDENT IMAGE -->
+        <div class="photo-box">
+            <img src="images/student.jpg" alt="Student Photo">
+        </div>
+    </div>
+
+    <table class="exam-table">
+        <tr>
+            <th>Course Code</th>
+            <th>Course Name</th>
+            <th>Date</th>
+            <th>Time</th>
+        </tr>
+        <tr>
+            <td>CS-301</td>
+            <td>Database Systems</td>
+            <td>12-Dec-2025</td>
+            <td>10:00 AM</td>
+        </tr>
+        <tr>
+            <td>CS-305</td>
+            <td>Operating Systems</td>
+            <td>14-Dec-2025</td>
+            <td>10:00 AM</td>
+        </tr>
+    </table>
+
+    <!-- INSTRUCTIONS -->
+    <div class="instructions">
+        <h3>Instructions:</h3>
+        <ul>
+            <li>Bring this admit card to every examination.</li>
+            <li>Late arrival will not be allowed after 30 minutes.</li>
+            <li>Mobile phones and electronic devices are prohibited.</li>
+            <li>Follow all instructions given by the invigilator.</li>
+        </ul>
+    </div>
+
+    <!-- BARCODE + SIGNATURE -->
+    <div class="bottom-section">
+
+        <!-- REAL BARCODE (SVG) -->
+        <svg id="barcode"></svg>
+
+        <div class="signature">
+            <div class="signature-line"></div>
+            <p><strong>Authorized Signature</strong></p>
+            <p>Controller of Examinations</p>
+        </div>
+    </div>
+
+    <div class="print-btn">
+        <button onclick="window.print()">Print Admit Card</button>
+    </div>
+
+</div>
+</div>
+
+</main>
+</div>
+
+<!-- PURE JS BARCODE GENERATOR (NO CDN) -->
+<script>
+function generateBarcode(svg, text) {
+    const barWidth = 2;
+    const height = 60;
+    let x = 10;
+
+    svg.setAttribute("width", 300);
+    svg.setAttribute("height", height);
+
+    for (let i = 0; i < text.length; i++) {
+        const value = text.charCodeAt(i);
+        for (let b = 0; b < 7; b++) {
+            if ((value >> b) & 1) {
+                const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+                rect.setAttribute("x", x);
+                rect.setAttribute("y", 0);
+                rect.setAttribute("width", barWidth);
+                rect.setAttribute("height", height);
+                rect.setAttribute("fill", "#000");
+                svg.appendChild(rect);
+            }
+            x += barWidth;
+        }
+        x += barWidth;
+    }
+}
+
+generateBarcode(
+    document.getElementById("barcode"),
+    "2021-CS-101"
+);
+</script>
+
+</body>
+</html>

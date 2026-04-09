@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HOD – Faculty List</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+<script>
+    if (localStorage.getItem("userRole") !== "hod") {
+        alert("Access denied");
+        location.href = "index.html";
+    }
+</script>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <h2>HOD</h2>
+        <a href="hod-dashboard.html">Dashboard</a>
+        <a class="active" href="#">Faculty</a>
+        <a href="hod-students-view.html">Students</a>
+        <a href="exam-timetable-view.html">Exam Timetable</a>
+        <a href="index.html">Logout</a>
+    </aside>
+
+    <main class="content">
+
+        <div class="header-card">
+            <h1>Faculty Members</h1>
+            <p>View faculty details (read-only).</p>
+        </div>
+
+        <div class="card">
+            <table width="100%" cellpadding="10">
+                <tr>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>Dr. Ahmed</td>
+                    <td>Computer Science</td>
+                    <td>Pending</td>
+                </tr>
+                <tr>
+                    <td>Ms. Sara</td>
+                    <td>Computer Science</td>
+                    <td>Approved</td>
+                </tr>
+            </table>
+        </div>
+
+    </main>
+</div>
+
+</body>
+</html>

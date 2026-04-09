@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students List</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+<script>
+    const role = localStorage.getItem("userRole");
+    if (role !== "hod") {
+        alert("Access denied!");
+        window.location.href = "index.html";
+    }
+</script>
+
+<div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>HOD</h2>
+        <a href="hod-dashboard.html">Dashboard</a>
+        <a href="hod-students-view.html" class="active">Students</a>
+        <a href="hod-exam-timetable.html">Exam Timetable</a>
+        <a href="hod-department-results.html">Department Results</a>
+        <a href="index.html">Logout</a>
+    </aside>
+
+    <!-- Content -->
+    <main class="content">
+
+        <div class="page-header">
+            <h1>Students List</h1>
+            <p>View enrolled students (read-only).</p>
+        </div>
+
+        <div class="card">
+            <table class="modern-table">
+                <thead>
+                    <tr>
+                        <th>Roll No</th>
+                        <th>Name</th>
+                        <th>Program</th>
+                        <th>Semester</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2021-CS-101</td>
+                        <td>Ali Khan</td>
+                        <td>BSCS</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>2021-CS-102</td>
+                        <td>Sara Ali</td>
+                        <td>BSCS</td>
+                        <td>5</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>

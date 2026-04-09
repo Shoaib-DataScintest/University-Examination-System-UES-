@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: #f4f6f9;
+}
+
+/* ===== LAYOUT ===== */
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+    width: 260px;
+    background: linear-gradient(180deg, #002b5c, #001a3a);
+    color: white;
+    padding: 30px 20px;
+}
+
+.role-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.sidebar nav a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    text-decoration: none;
+    padding: 14px 18px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+    background: #1e73ff;
+}
+
+/* ===== MAIN CONTENT ===== */
+.content {
+    flex: 1;
+    padding: 40px;
+}
+
+/* ===== CARDS ===== */
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.header-card h1 {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.header-card p {
+    color: #555;
+    font-size: 16px;
+}
+
+/* ===== CHECK LIST ===== */
+.checklist {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.checklist li {
+    font-size: 16px;
+    margin-bottom: 10px;
+}

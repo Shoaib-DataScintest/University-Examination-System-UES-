@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Controller Dashboard</title>
+<link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+<script>
+    const role = localStorage.getItem("userRole");
+    if (role !== "controller") {
+        alert("Access Denied!");
+        window.location.href = "index.html";
+    }
+</script>
+
+<div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>Controller</h2>
+        <a href="controller-dashboard.html" class="active">Dashboard</a>
+        <a href="rechecking-approval.html">Rechecking Approval</a>
+        <a href="rechecking-history.html">Rechecking History</a>
+        <a href="index.html" onclick="return confirm('Logout?')">Logout</a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1>Controller Dashboard</h1>
+            <p>Approve, reject, and monitor student rechecking requests.</p>
+        </div>
+
+        <!-- Cards -->
+        <div class="card-grid">
+
+            <div class="card stat-card">
+                <h3>Pending Requests</h3>
+                <p class="stat-number">3</p>
+            </div>
+
+            <div class="card stat-card success">
+                <h3>Approved Requests</h3>
+                <p class="stat-number">5</p>
+            </div>
+
+            <div class="card stat-card danger">
+                <h3>Rejected Requests</h3>
+                <p class="stat-number">1</p>
+            </div>
+
+        </div>
+
+        <!-- Action Cards -->
+        <div class="card-grid">
+
+            <div class="card">
+                <h3>Rechecking Approval</h3>
+                <p>Review and approve/reject student rechecking requests.</p>
+                <a href="rechecking-approval.html" class="btn primary">Go to Approval</a>
+            </div>
+
+            <div class="card">
+                <h3>Rechecking History</h3>
+                <p>View all processed rechecking requests.</p>
+                <a href="rechecking-history.html" class="btn secondary">View History</a>
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>

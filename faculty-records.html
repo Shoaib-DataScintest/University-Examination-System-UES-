@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Academic Records</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+<script>
+    if (localStorage.getItem("userRole") !== "faculty") {
+        alert("Unauthorized access!");
+        window.location.href = "index.html";
+    }
+</script>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <h2>Faculty</h2>
+        <a href="faculty-dashboard.html">Dashboard</a>
+        <a href="upload-marks.html">Upload Marks</a>
+        <a href="faculty-timetable.html">View Timetable</a>
+        <a href="faculty-records.html" class="active">Academic Records</a>
+        <a href="index.html">Logout</a>
+    </aside>
+
+    <main class="content">
+
+        <div class="page-header">
+            <h1>Academic Records</h1>
+            <p>View submitted examination records</p>
+        </div>
+
+        <div class="card">
+            <table border="1" width="100%" cellpadding="10">
+                <tr>
+                    <th>Roll No</th>
+                    <th>Course</th>
+                    <th>Marks</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>2021-CS-101</td>
+                    <td>Database Systems</td>
+                    <td>78</td>
+                    <td>Submitted</td>
+                </tr>
+                <tr>
+                    <td>2021-CS-102</td>
+                    <td>Operating Systems</td>
+                    <td>82</td>
+                    <td>Submitted</td>
+                </tr>
+            </table>
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Exam Timetable</title>
+<link rel="stylesheet" href="css/dashboard.css">
+
+<script>
+/* ================= ROLE-BASED ACCESS CONTROL ================= */
+
+const role = localStorage.getItem("userRole");
+
+/* Allow ONLY Admin and HOD */
+if (!["admin", "hod"].includes(role)) {
+    alert("Unauthorized access!");
+    window.location.href = "index.html";
+}
+
+/* Role-aware dashboard routing */
+function goDashboard() {
+    if (role === "admin") {
+        window.location.href = "admin-dashboard.html";
+    } else if (role === "hod") {
+        window.location.href = "hod-dashboard.html";
+    }
+}
+</script>
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
+        <h2>Exam Timetable</h2>
+
+        <!-- FIXED DASHBOARD BUTTON -->
+        <a href="#" onclick="goDashboard()">Dashboard</a>
+
+        <a class="active" href="exam-timetable.html">Exam Timetable</a>
+        <a href="index.html" onclick="return confirm('Are you sure you want to logout?')">Logout</a>
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="main">
+
+        <div class="header">
+            <h1>Exam Timetable</h1>
+            <p>Manage examination schedules.</p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Add Timetable</h3>
+                <p>Create a new exam schedule.</p>
+                <a href="exam-timetable-add.html" class="btn primary">Add</a>
+            </div>
+
+            <div class="card">
+                <h3>View Timetable</h3>
+                <p>View scheduled exams.</p>
+                <a href="exam-timetable-view.html" class="btn info">View</a>
+            </div>
+
+            <div class="card">
+                <h3>Update Timetable</h3>
+                <p>Modify exam schedules.</p>
+                <a href="exam-timetable-update.html" class="btn warning">Update</a>
+            </div>
+
+            <div class="card">
+                <h3>Delete Timetable</h3>
+                <p>Remove an exam entry.</p>
+                <a href="exam-timetable-delete.html" class="btn danger"
+                   onclick="return confirm('Are you sure you want to delete?')">
+                   Delete
+                </a>
+            </div>
+
+        </div>
+
+    </main>
+</div>
+
+</body>
+</html>

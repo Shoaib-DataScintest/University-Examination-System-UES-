@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Faculty Dashboard</title>
+
+    <!-- ✅ ROOT-BASED PATHS -->
+    <link rel="stylesheet" href="css/dashboard.css">
+    <script defer src="js/auth.js"></script>
+</head>
+
+<body data-role="faculty">
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <h2>Faculty</h2>
+
+        <a class="active" href="faculty-dashboard.html">Dashboard</a>
+        <a href="upload-marks.html">Upload Marks</a>
+        <a href="faculty-timetable.html">Exam Timetable</a>
+        <a href="academic-records.html">Academic Records</a>
+        <a href="index.html">Logout</a>
+    </aside>
+
+    <main class="main">
+        <div class="page-header">
+            <h1>Faculty Dashboard</h1>
+            <p>Manage courses, marks, and examination records.</p>
+        </div>
+
+        <div class="card-grid">
+            <div class="card">
+                <h3>Upload Marks</h3>
+                <p>Submit student examination marks.</p>
+                <a class="btn primary" href="upload-marks.html">Upload</a>
+            </div>
+
+            <div class="card">
+                <h3>Exam Timetable</h3>
+                <p>View assigned exam schedule.</p>
+                <a class="btn secondary" href="faculty-timetable.html">View</a>
+            </div>
+
+            <div class="card">
+                <h3>Academic Records</h3>
+                <p>Access examination-related academic data.</p>
+                <a class="btn outline" href="academic-records.html">Open</a>
+            </div>
+        </div>
+    </main>
+
+</div>
+
+</body>
+</html>

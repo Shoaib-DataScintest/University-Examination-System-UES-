@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Add Exam Timetable</title>
+<link rel="stylesheet" href="css/dashboard.css">
+
+<script>
+const role = localStorage.getItem("userRole");
+if (!["admin", "hod"].includes(role)) {
+    alert("Unauthorized access!");
+    window.location.href = "index.html";
+}
+</script>
+</head>
+
+<body>
+<div class="layout">
+
+<aside class="sidebar">
+    <h2>Exam Timetable</h2>
+    <a href="exam-timetable.html">Back</a>
+    <a href="index.html">Logout</a>
+</aside>
+
+<main class="main">
+
+<div class="header">
+    <h1>Add Exam Timetable</h1>
+    <p>Create a new examination schedule</p>
+</div>
+
+<div class="card form-card">
+
+<form>
+    <div class="form-grid">
+
+        <div class="form-group">
+            <label>Course Code</label>
+            <input type="text" placeholder="CS101" required>
+        </div>
+
+        <div class="form-group">
+            <label>Exam Date</label>
+            <input type="date" required>
+        </div>
+
+        <div class="form-group">
+            <label>Exam Time</label>
+            <input type="time" required>
+        </div>
+
+        <div class="form-group">
+            <label>Room</label>
+            <input type="text" placeholder="Room A1" required>
+        </div>
+
+    </div>
+
+    <button class="btn primary" type="submit">Save Timetable</button>
+</form>
+
+</div>
+</main>
+</div>
+</body>
+</html>

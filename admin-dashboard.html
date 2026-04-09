@@ -1,0 +1,87 @@
+<?php
+session_start();
+
+// Check if user is logged in and is Admin
+if (!isset($_SESSION["user_id"]) || $_SESSION["role_id"] != 1) {
+    header("Location: index.html");
+    exit;
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+<script>
+    if (localStorage.getItem("userRole") !== "admin") {
+        alert("Unauthorized access");
+        location.href = "index.html";
+    }
+</script>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <h2>Admin</h2>
+        <a href="admin-dashboard.html" class="active">Dashboard</a>
+        <a href="manage-students-view.html">Students</a>
+        <a href="manage-faculty-view.html">Faculty</a>
+        <a href="exam-timetable.html">Exam Timetable</a>
+        <a href="create-term.html">Exam Terms</a>
+        <a href="index.html">Logout</a>
+    </aside>
+
+    <main class="content">
+
+        <div class="header-card">
+            <h1>Admin Dashboard</h1>
+            <p>System-level management of examination processes.</p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Student Management</h3>
+                <p>Full CRUD operations on students.</p>
+                <div class="action-buttons">
+                    <a href="manage-students-add.html" class="add">Add</a>
+                    <a href="manage-students-view.html" class="view">View</a>
+                    <a href="manage-students-update.html" class="update">Update</a>
+                    <a href="manage-students-delete.html" class="delete">Delete</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Faculty Management</h3>
+                <p>Full CRUD operations on faculty.</p>
+                <div class="action-buttons">
+                    <a href="manage-faculty-add.html" class="add">Add</a>
+                    <a href="manage-faculty-view.html" class="view">View</a>
+                    <a href="manage-faculty-update.html" class="update">Update</a>
+                    <a href="manage-faculty-delete.html" class="delete">Delete</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Exam Timetable</h3>
+                <p>Create and manage exam schedules.</p>
+                <div class="action-buttons">
+                    <a href="exam-timetable-add.html" class="add">Add</a>
+                    <a href="exam-timetable-view.html" class="view">View</a>
+                    <a href="exam-timetable-update.html" class="update">Update</a>
+                    <a href="exam-timetable-delete.html" class="delete">Delete</a>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+</div>
+
+</body>
+</html>

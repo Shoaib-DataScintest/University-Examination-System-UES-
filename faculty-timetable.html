@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exam Timetable</title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+    <script defer src="js/auth.js"></script>
+</head>
+
+<!-- ✅ THIS LINE FIXES UNAUTHORIZED ISSUE -->
+<body data-role="faculty">
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <h2>Faculty</h2>
+
+        <a href="faculty-dashboard.html">Dashboard</a>
+        <a class="active" href="exam-timetable.html">Exam Timetable</a>
+        <a href="academic-records.html">Academic Records</a>
+        <a href="index.html">Logout</a>
+    </aside>
+
+    <main class="main">
+        <div class="page-header">
+            <h1>Exam Timetable</h1>
+            <p>View your assigned examination schedule.</p>
+        </div>
+
+        <div class="card-grid">
+            <div class="card">
+                <h3>CS101</h3>
+                <p><strong>Date:</strong> 15 June 2026</p>
+                <p><strong>Time:</strong> 09:00 – 12:00</p>
+                <p><strong>Room:</strong> A1</p>
+            </div>
+
+            <div class="card">
+                <h3>CS203</h3>
+                <p><strong>Date:</strong> 17 June 2026</p>
+                <p><strong>Time:</strong> 01:00 – 04:00</p>
+                <p><strong>Room:</strong> B3</p>
+            </div>
+        </div>
+    </main>
+
+</div>
+
+</body>
+</html>

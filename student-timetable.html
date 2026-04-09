@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Student Exam Timetable</title>
+<link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+<div class="layout">
+
+<aside class="sidebar">
+    <h2>Student</h2>
+    <a href="student-dashboard.html">Dashboard</a>
+    <a class="active" href="student-timetable.html">Exam Timetable</a>
+    <a href="result.html">Result</a>
+    <a href="admit-card.html">Admit Card</a>
+    <a href="transcript.html">Transcript</a>
+    <a href="index.html">Logout</a>
+</aside>
+
+<main class="main">
+<div class="header">
+    <h1>Exam Timetable</h1>
+</div>
+
+<div class="card">
+<label><strong>Select Exam Term:</strong></label>
+<select onchange="filterTerm(this.value)">
+    <option value="all">All</option>
+    <option value="fall2025">Final Term – Fall 2025</option>
+    <option value="spring2025">Mid Term – Spring 2025</option>
+</select>
+</div>
+
+<div class="card">
+<table class="table">
+<tr>
+    <th>Term</th>
+    <th>Course</th>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Room</th>
+</tr>
+
+<tr data-term="fall2025">
+    <td>Final Term – Fall 2025</td>
+    <td>CS-301 (Database Systems)</td>
+    <td>12-Dec-2025</td>
+    <td>10:00 AM</td>
+    <td>Lab-2</td>
+</tr>
+
+<tr data-term="spring2025">
+    <td>Mid Term – Spring 2025</td>
+    <td>CS-201 (OOP)</td>
+    <td>15-Mar-2025</td>
+    <td>09:00 AM</td>
+    <td>Lab-1</td>
+</tr>
+
+</table>
+</div>
+
+</main>
+</div>
+
+<script>
+function filterTerm(term) {
+    document.querySelectorAll("tr[data-term]").forEach(row => {
+        row.style.display = (term === "all" || row.dataset.term === term) ? "" : "none";
+    });
+}
+</script>
+
+</body>
+</html>

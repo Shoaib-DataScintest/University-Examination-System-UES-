@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HOD – Exam Reports</title>
+    <link rel="stylesheet" href="css/hod.css">
+</head>
+<body>
+
+<div class="layout">
+
+   <div class="top-nav">
+    <a href="hod-dashboard.html" class="active">🏠 Dashboard</a>
+    <a href="student-progress.html">🎓 Student Progress</a>
+    <a href="exam-reports.html">📊 Exam Reports</a>
+    <a href="index.html">🚪 Logout</a>
+</div>
+
+
+    <!-- Main Content -->
+    <div class="main">
+
+        <div class="card">
+            <h1>Exam Reports</h1>
+            <p>Department examination statistics and analysis.</p>
+        </div>
+
+        <div class="card">
+            <h2>Subject-wise Exam Report</h2>
+
+            <table class="modern-table">
+                <thead>
+                    <tr>
+                        <th>Course</th>
+                        <th>Semester</th>
+                        <th>Total Students</th>
+                        <th>Passed</th>
+                        <th>Pass Percentage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Database Systems</td>
+                        <td>Fall 2025</td>
+                        <td>120</td>
+                        <td>98</td>
+                        <td>82%</td>
+                    </tr>
+                    <tr>
+                        <td>Operating Systems</td>
+                        <td>Fall 2025</td>
+                        <td>110</td>
+                        <td>84</td>
+                        <td>76%</td>
+                    </tr>
+                    <tr>
+                        <td>Object Oriented Programming</td>
+                        <td>Fall 2025</td>
+                        <td>140</td>
+                        <td>123</td>
+                        <td>88%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <br>
+            <button class="btn" onclick="window.print()">🖨 Print Report</button>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

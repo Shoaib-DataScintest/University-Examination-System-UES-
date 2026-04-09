@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Marks</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+<script>
+    if (localStorage.getItem("userRole") !== "faculty") {
+        alert("Unauthorized access!");
+        window.location.href = "index.html";
+    }
+</script>
+
+<div class="layout">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
+        <h2>Faculty</h2>
+
+        <a href="faculty-dashboard.html">Dashboard</a>
+        <a href="upload-marks.html" class="active">Upload Marks</a>
+        <a href="faculty-timetable.html">View Timetable</a>
+        <a href="faculty-records.html">Academic Records</a>
+        <a href="index.html" onclick="return confirm('Logout?')">Logout</a>
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="content">
+
+        <!-- Header -->
+        <div class="page-header">
+            <h1>Upload Marks</h1>
+            <p>Enter and submit student examination marks securely.</p>
+        </div>
+
+        <!-- Form Card -->
+        <div class="card form-card">
+
+            <form>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label>Student Roll No</label>
+                        <input type="text" placeholder="e.g. F2025393023" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Course Code</label>
+                        <input type="text" placeholder="e.g. CS-301" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Total Marks</label>
+                        <input type="number" placeholder="e.g. 100" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Obtained Marks</label>
+                        <input type="number" placeholder="e.g. 78" required>
+                    </div>
+
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">
+                        Submit Marks
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>

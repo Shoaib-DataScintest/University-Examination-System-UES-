@@ -1,0 +1,160 @@
+/* ================================
+   LOGIN PAGE STYLES
+   File: css/login.css
+   ================================ */
+
+/* ---------- RESET ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------- BODY BACKGROUND ---------- */
+body {
+    min-height: 100vh;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+    /* Background image + dark overlay */
+    background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url("../images/login-bg.jpg") center/cover no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ---------- DARK MODE BACKGROUND ---------- */
+body.dark {
+    background:
+        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+        url("../images/login-bg.jpg") center/cover no-repeat;
+}
+
+/* ---------- LOGIN CONTAINER (GLASS EFFECT) ---------- */
+.login-container {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    width: 100%;
+    max-width: 520px;
+    padding: 40px 45px;
+    border-radius: 14px;
+
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.35),
+        inset 0 0 0 1px rgba(255,255,255,0.4);
+}
+
+/* ---------- DARK MODE CONTAINER ---------- */
+body.dark .login-container {
+    background: rgba(30, 30, 30, 0.85);
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.6),
+        inset 0 0 0 1px rgba(255,255,255,0.08);
+}
+
+/* ---------- HEADINGS ---------- */
+.login-container h2 {
+    text-align: center;
+    color: #1e3c72;
+    margin-bottom: 6px;
+}
+
+body.dark .login-container h2 {
+    color: #ffffff;
+}
+
+.login-container p {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+body.dark .login-container p {
+    color: #cccccc;
+}
+
+/* ---------- LABELS ---------- */
+.login-container label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+body.dark .login-container label {
+    color: #dddddd;
+}
+
+/* ---------- INPUTS & SELECT ---------- */
+.login-container input,
+.login-container select {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    outline: none;
+}
+
+.login-container input:focus,
+.login-container select:focus {
+    border-color: #1e3c72;
+}
+
+body.dark .login-container input,
+body.dark .login-container select {
+    background: #2a2a2a;
+    border: 1px solid #555;
+    color: #ffffff;
+}
+
+/* ---------- TOGGLES ---------- */
+.toggle-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    font-size: 13px;
+}
+
+.toggle-row label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+/* ---------- BUTTON ---------- */
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    background: #1e3c72;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-container button:hover {
+    background: #16325c;
+}
+
+/* ---------- FOOTER ---------- */
+.footer-text {
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    margin-top: 18px;
+}
+
+body.dark .footer-text {
+    color: #aaaaaa;
+}

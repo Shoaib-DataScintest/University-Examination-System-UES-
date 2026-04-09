@@ -1,0 +1,137 @@
+/* ==============================
+   Page Base
+============================== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+    background: #f4f7fb;
+    color: #1f2937;
+}
+
+/* ==============================
+   Main Content Area
+============================== */
+.main {
+    padding: 40px;
+}
+
+/* ==============================
+   Card Layout
+============================== */
+.card {
+    background: #ffffff;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+.card h1 {
+    font-size: 32px;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.card h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #0f172a;
+}
+
+.card p {
+    color: #475569;
+    font-size: 15px;
+}
+
+/* ==============================
+   Modern Table
+============================== */
+.modern-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.modern-table thead th {
+    background: #f1f5ff;
+    color: #0f172a;
+    padding: 14px 16px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.modern-table tbody td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.modern-table tbody tr:hover {
+    background: #f9fbff;
+}
+
+/* Rounded corners */
+.modern-table thead th:first-child {
+    border-top-left-radius: 12px;
+}
+
+.modern-table thead th:last-child {
+    border-top-right-radius: 12px;
+}
+
+/* ==============================
+   Buttons
+============================== */
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    margin-top: 20px;
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(37,99,235,0.3);
+}
+/* ==============================
+   Top Navigation Bar (HOD)
+============================== */
+.top-nav {
+    display: flex;
+    gap: 14px;
+    padding: 18px 40px;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.top-nav a {
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1f2937;
+    background: #f1f5f9;
+    transition: all 0.25s ease;
+}
+
+/* Hover */
+.top-nav a:hover {
+    background: #e0e7ff;
+    color: #1e40af;
+}
+
+/* Active Page */
+.top-nav a.active {
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    color: #ffffff;
+    box-shadow: 0 6px 14px rgba(37, 99, 235, 0.35);
+}

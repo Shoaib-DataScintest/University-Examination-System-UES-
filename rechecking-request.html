@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rechecking Request</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+<script>
+    const role = localStorage.getItem("userRole");
+    if (role !== "student") {
+        alert("Unauthorized access!");
+        window.location.href = "index.html";
+    }
+</script>
+
+<div class="layout">
+
+    <!-- ================= Sidebar ================= -->
+    <aside class="sidebar"> 
+        <h2>Student</h2>
+
+        <a href="student-dashboard.html">Dashboard</a>
+        <a href="result.html">Result</a>
+        <a href="admit-card.html">Admit Card</a>
+        <a href="transcript.html">Transcript</a>
+        <a href="student-timetable.html">Timetable</a>
+        <a href="rechecking-request.html" class="active">Rechecking Request</a>
+        <a href="student-rechecking-history.html">Rechecking History</a>
+        <a href="index.html" onclick="return confirm('Logout?')">Logout</a>
+    </aside>
+
+    <!-- ================= Main Content ================= -->
+    <main class="content">
+
+        <div class="card wide-card">
+
+            <div class="card-header">
+                <h1>🔄 Rechecking Request</h1>
+                <p>Submit request for result rechecking</p>
+            </div>
+
+            <div class="student-info">
+                <p><strong>Name:</strong> Muhammad Shoaib</p>
+                <p><strong>Roll No:</strong> F2025393023</p>
+            </div>
+
+            <form class="form-grid">
+
+                <div class="form-group">
+                    <label for="course">Select Course</label>
+                    <select id="course" required>
+                        <option value="">-- Select Course --</option>
+                        <option>CS-301 Database Systems</option>
+                        <option>CS-305 Operating Systems</option>
+                        <option>MTH-201 Linear Algebra</option>
+                    </select>
+                </div>
+
+                <div class="form-group full">
+                    <label for="reason">Reason (Optional)</label>
+                    <textarea id="reason" rows="4"
+                        placeholder="Enter reason for rechecking"></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">
+                        📄 Submit Request
+                    </button>
+
+                    <a href="student-rechecking-history.html" class="btn-link">
+                        📂 View My Requests
+                    </a>
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>

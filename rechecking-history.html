@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rechecking History</title>
+<link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+<script>
+    const role = localStorage.getItem("userRole");
+    if (role !== "controller") {
+        alert("Access Denied!");
+        window.location.href = "index.html";
+    }
+</script>
+
+<div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>Controller</h2>
+        <a href="controller-dashboard.html">Dashboard</a>
+        <a href="rechecking-approval.html">Rechecking Approval</a>
+        <a href="rechecking-history.html" class="active">Rechecking History</a>
+        <a href="index.html">Logout</a>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+
+        <div class="page-header">
+            <h1>Rechecking History</h1>
+            <p>View all processed rechecking requests.</p>
+        </div>
+
+        <div class="card">
+
+            <table class="modern-table">
+                <thead>
+                    <tr>
+                        <th>Student</th>
+                        <th>Roll No</th>
+                        <th>Course</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Ali Khan</td>
+                        <td>BSCS-21-101</td>
+                        <td>Database Systems</td>
+                        <td><span class="badge success">Approved</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Sara Ali</td>
+                        <td>BSCS-21-102</td>
+                        <td>Operating Systems</td>
+                        <td><span class="badge danger">Rejected</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>

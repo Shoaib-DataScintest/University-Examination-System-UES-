@@ -1,0 +1,130 @@
+* {
+    font-family: 'Segoe UI', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f4f7fb;
+    margin: 0;
+    padding: 30px;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+h1 {
+    color: #003366;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: 600;
+    display: block;
+    margin-top: 15px;
+}
+
+select, textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+}
+
+button {
+    margin-top: 20px;
+    background: #0056b3;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover {
+    background: #003f88;
+}
+
+.status {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.pending {
+    background: #ffeeba;
+    color: #856404;
+}
+
+.approved {
+    background: #d4edda;
+    color: #155724;
+}
+
+.rejected {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #003366;
+    color: white;
+    padding: 12px;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.badge {
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 13px;
+}
+
+.approve {
+    background: #28a745;
+}
+
+.reject {
+    background: #dc3545;
+}
+
+.link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: 600;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rechecking Request</title>
+    <link rel="stylesheet" href="css/rechecking.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <h1>🔄 Rechecking Request</h1>
+        <p class="subtitle">Submit request for result rechecking</p>
+
+        <div class="info">
+            <p><strong>Name:</strong> Muhammad Shoaib</p>
+            <p><strong>Roll No:</strong> F2025393023</p>
+        </div>
+
+        <label>Select Course</label>
+        <select id="course">
+            <option value="">-- Select Course --</option>
+            <option>Database Systems</option>
+            <option>Object Oriented Programming</option>
+        </select>
+
+        <label>Reason (Optional)</label>
+        <textarea id="reason" rows="3" placeholder="Enter reason for rechecking"></textarea>
+
+        <button onclick="submitRequest()">📨 Submit Request</button>
+
+        <div id="statusBox" class="status pending" style="display:none;">
+            Status: Pending
+        </div>
+
+        <a class="link" href="rechecking-history.html">📄 View My Requests</a>
+    </div>
+</div>
+
+<script>
+function submitRequest() {
+    const course = document.getElementById("course").value;
+    if(course === "") {
+        alert("Please select a course");
+        return;
+    }
+
+    const requests = JSON.parse(localStorage.getItem("requests")) || [];
+
+    const newRequest = {
+        id: "REQ-" + Date.now(),
+        student: "Muhammad Shoaib",
+        roll: "F2025393023",
+        course: course,
+        time: new Date().toLocaleString(),
+        status: "Pending"
+    };
+
+    requests.push(newRequest);
+    localStorage.setItem("requests", JSON.stringify(requests));
+
+    document.getElementById("statusBox").style.display = "block";
+    alert("Rechecking request submitted successfully!");
+}
+</script>
+
+</body>
+</html>
